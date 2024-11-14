@@ -3,7 +3,7 @@ export const projects = [
   {
     title: "Book Data Pipeline & Cataloger",
     description: "An iOS app to scan book barcodes or enter ISBNs, with a python backed to pull data like author info and pricing through web scraping. Outputs in a csv format, with optional combining and sorting of the files.",
-    image: "/test.jpeg",
+    image: "/bkDataPipeline.jpeg",
     link: "https://github.com/kwmndz/ISBN-Parser"
   },
   {
@@ -15,14 +15,14 @@ export const projects = [
   {
     title: "Augmented Reality Connect 4 & AI Bot",
     description: "An AR implementation of Connect 4 for iOS, with realistic physics and a bot opponent. Pieces can be placed via touch interaction and the bot utilizes min-maxing and alpha-beta pruning to never loose!",
-    image: "/test.jpeg", 
+    image: "/c4AR.png", 
     link: "https://github.com/kwmndz/ConnectFourAR"
   },
   {
-    title: "Star Atlas",
-    description: "Interactive data visualization dashboard",
+    title: "UGV Path Planning & Local Min Prediction",
+    description: "Fill in here",
     image: "/test.jpeg",
-    link: "#"
+    link: "https://github.com/kwmndz/MAVRIC-Lab"
   }
 ];
 

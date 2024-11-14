@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Github, Linkedin, Mail, Menu, X, ExternalLink, ChevronDown, Rocket, Code, User } from 'lucide-react';
 import { projects, starPositions } from './utils/constants';
+import { SkillsConstellation } from './components/SkillsConstellation';
 
 const AnimatedStars = () => (
   <div className="fixed inset-0 z-0">
@@ -417,6 +418,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <SkillsConstellation />
     </div>
   );
 }
