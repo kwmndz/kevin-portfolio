@@ -230,7 +230,7 @@ const ProjectCard = ({ project, index }) => (
         </motion.div>
       </div>
 
-      <div className={`flex-1 text-center md:text-left ${index % 2 === 1 ? 'md:pl-40' : ''}`}>
+      <div className={`flex-1 text-center md:text-left ${index % 2 === 1 ? 'lg:pl-40' : ''}`}>
         <motion.h3 
           className="text-2xl md:text-3xl font-bold text-white mb-4"
           initial={{ x: 0, opacity: 0 }}
