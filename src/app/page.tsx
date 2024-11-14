@@ -31,7 +31,7 @@ const AnimatedStars = () => (
 
 const PlanetIllustration = ({ planetScale, planetY, planetOpacity, planetTextOpacity }) => (
   <motion.div 
-    className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] z-10 flex items-center justify-center"
+    className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] z-10 flex items-center justify-center"
     style={{
       scale: planetScale,
       y: planetY,
@@ -41,9 +41,9 @@ const PlanetIllustration = ({ planetScale, planetY, planetOpacity, planetTextOpa
   >
     <motion.div
       style={{ opacity: planetTextOpacity }}
-      className="text-center translate-y-[-50%]"
+      className="text-center translate-y-[-50%] hidden md:block"
     >
-      <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-8 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
         Explore My Universe
       </h2>
       <div className="flex flex-col items-center justify-center">
@@ -141,8 +141,8 @@ const ProjectCard = ({ project, index }) => (
     }}
     viewport={{ once: true, margin: "-100px" }}
   >
-    <div className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-8`}>
-      <div className="w-[400px] h-[400px] relative">
+    <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}>
+      <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
         <motion.div 
           className="absolute inset-0 rounded-full bg-gradient-to-b from-purple-600 to-blue-800"
           animate={{
@@ -187,7 +187,7 @@ const ProjectCard = ({ project, index }) => (
         </motion.div>
 
         <motion.div
-          className={`absolute ${index % 2 === 0 ? 'right-[-950px]' : 'left-[-950px]'} top-1/6 -translate-y-1/2 w-[200px] h-[400px]`}
+          className={`hidden lg:block absolute ${index % 2 === 0 ? 'right-[-950px]' : 'left-[-950px]'} top-1/6 -translate-y-1/2 w-[200px] h-[400px]`}
           initial={{ opacity: 0 }}
           whileInView={{ 
             opacity: 1,
@@ -196,23 +196,23 @@ const ProjectCard = ({ project, index }) => (
           viewport={{ once: false, margin: "-100px" }}
           style={{ scale: 0.9 }}
         >
-          <RocketShip style={{ rotate: 0 }} animate={false} />
+          <RocketShip style={{ rotate: 0 }} animate={true} />
         </motion.div>
       </div>
 
-      <div className="flex-1">
+      <div className={`flex-1 text-center md:text-left ${index % 2 === 1 ? 'md:pl-40' : ''}`}>
         <motion.h3 
-          className="text-3xl font-bold text-white mb-4"
-          initial={{ x: index % 2 === 0 ? 50 : 190, opacity: 0 }}
-          whileInView={{ x: index % 2 === 0 ? 0 : 140, opacity: 1 }}
+          className="text-2xl md:text-3xl font-bold text-white mb-4"
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {project.title}
         </motion.h3>
         <motion.p 
-          className="text-purple-300 mb-6 max-w-xl"
-          initial={{ x: index % 2 === 0 ? 50 : 190, opacity: 0 }}
-          whileInView={{ x: index % 2 === 0 ? 0 : 140, opacity: 1 }}
+          className="text-purple-300 mb-6 max-w-xl mx-auto md:mx-0"
+          initial={{ x: 0, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           {project.description}
@@ -220,8 +220,6 @@ const ProjectCard = ({ project, index }) => (
         <motion.a
           href={project.link}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:opacity-90 transition-opacity"
-          whileInView={{ x: index % 2 === 0 ? 0 : 140, opacity: 1 }}
-          transition={{ duration: 0, delay: 0 }}
           whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)" }}
           whileTap={{ scale: 0.95 }}
         >
@@ -288,9 +286,9 @@ export default function Home() {
         planetTextOpacity={planetTextOpacity}
       />
 
-      <section className="relative min-h-screen flex items-start justify-center px-6 pt-32">
+      <section className="relative min-h-screen flex items-start justify-center px-4 sm:px-6 pt-20 sm:pt-32">
         <motion.div
-          className="fixed left-[15%] top-1/2 -translate-y-1/2 z-20 w-[200px] h-[400px]"
+          className="hidden lg:block fixed left-[15%] top-1/2 -translate-y-1/2 z-20 w-[200px] h-[400px]"
           style={{ 
             x: initialRocketX,
             rotate: initialRocketRotate,
@@ -309,7 +307,7 @@ export default function Home() {
             className="mb-6"
           >
             <motion.div 
-              className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-4"
+              className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400 mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -318,7 +316,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 
-              className="text-4xl md:text-7xl font-bold text-white relative"
+              className="text-3xl sm:text-4xl md:text-7xl font-bold text-white relative"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -333,7 +331,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.4 }}
-            className="text-lg md:text-xl max-w-2xl mx-auto relative font-mono text-purple-400"
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto relative font-mono text-purple-400 px-4"
             style={{
               textShadow: '0 0 10px rgba(124, 58, 237, 0.5)',
               letterSpacing: '0.05em',
@@ -355,7 +353,7 @@ export default function Home() {
         </div>
 
         <motion.div
-          className="absolute right-[15%] top-[30%] z-20"
+          className="hidden lg:block absolute right-[15%] top-[30%] z-20"
           animate={{
             y: [0, -10, 0],
             rotate: [0, 3, 0],
@@ -372,10 +370,10 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="relative min-h-screen py-32" id="projects">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative min-h-screen py-16 sm:py-32" id="projects">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.h2 
-            className="text-4xl font-bold text-center text-white mb-16"
+            className="text-3xl sm:text-4xl font-bold text-center text-white mb-16"
             style={{ opacity: projectsTitleOpacity }}
           >
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
@@ -383,7 +381,7 @@ export default function Home() {
             </span>
           </motion.h2>
 
-          <div className="space-y-64">
+          <div className="space-y-32 sm:space-y-64">
             {projects.map((project, index) => (
               <ProjectCard key={project.title} project={project} index={index} />
             ))}
