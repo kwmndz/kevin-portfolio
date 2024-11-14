@@ -75,3 +75,58 @@ export const starPositions = Array.from({ length: 50 }, () => ({
   top: `${Math.floor(Math.random() * 100)}%`, 
   duration: Math.floor(Math.random() * 3) + 2,
 })); 
+
+export interface WorkExperience {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  description: string;
+  responsibilities: string[];
+  techStack: string[];
+}
+
+// =============================================
+//              Work Experience
+// =============================================
+
+export const workExperience: WorkExperience[] = [
+  {
+    company: "MAVRIC Research Lab",
+    role: "Research Intern",
+    location: "University of Michigan",
+    period: "September 2024 - Present",
+    description: "Research laboratory focused on autonomous vehicle development and robotics innovation.",
+    responsibilities: [
+      "Developed python scripts to control the UGV's path planning using the potential field algorithm",
+      "Implemented Dynamic Bayesian Filtering to predict when and where the UGV would enter a local minimum",
+      "Integrated script functionality within the Unreal Engine 5 simulation and added the ability to dynamically set waypoints"
+    ],
+    techStack: ["Python", "Unreal Engine 5", "Robotics", "Path Planning", "Bayesian Filtering"]
+  },
+  {
+    company: "Mailinglists.com / Infinite Media, Inc",
+    role: "Paid Intern",
+    location: "Remote",
+    period: "June 2023 - August 2024",
+    description: "Infinite Media specializes in high-quality data lists for businesses",
+    responsibilities: [
+      "Script writing in PySpark & SQL to create queries, refractor libraries, set up & test jobs, and compile data",
+      "Management of back-end systems through Databricks, SFTP and Bitbucket",
+      "Participated in team meetings while constantly learning new material & software"
+    ],
+    techStack: ["PySpark", "SQL", "Databricks", "SFTP", "Bitbucket"]
+  },
+  {
+    company: "KutterGroup LLC",
+    role: "Paid Intern",
+    location: "Remote",
+    period: "June 2022 - June 2023",
+    description: "KutterGroup LLC specializes in website development and maintenance",
+    responsibilities: [
+      "Script writing in Python & SQL for data transfer and back-end maintenance",
+      "Webpage UI development through Wordpress as well as plug-in management"
+    ],
+    techStack: ["Python", "SQL", "WordPress", "UI Development"]
+  }
+]; 
