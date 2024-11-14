@@ -246,6 +246,8 @@ const ProjectCard = ({ project, index }) => (
         </motion.p>
         <motion.a
           href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:opacity-90 transition-opacity"
           whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(124, 58, 237, 0.5)" }}
           whileTap={{ scale: 0.95 }}

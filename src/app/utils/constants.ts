@@ -1,22 +1,22 @@
 // Project data
 export const projects = [
   {
-    title: "Project Nebula",
-    description: "A revolutionary AI-powered space exploration simulator",
+    title: "Book Data Pipeline & Cataloger",
+    description: "An iOS app to scan book barcodes or enter ISBNs, with a python backed to pull data like author info and pricing through web scraping. Outputs in a csv format, with optional combining and sorting of the files.",
     image: "/test.jpeg",
-    link: "#"
+    link: "https://github.com/kwmndz/ISBN-Parser"
   },
   {
-    title: "Cosmic Connect",
-    description: "Real-time collaboration platform for distributed teams",
+    title: "2D Chess Position Detector & Analyzer",
+    description: "A Python tool that detects chess piece positions from a board image, converts it to FEN notation, and suggests the next move based on the setup.",
     image: "/test.jpeg", 
-    link: "#"
+    link: "https://github.com/kwmndz/ChessBoardDetection"
   },
   {
-    title: "Cocky Connect",
-    description: "Real-time collaboration platform for distributed teams",
+    title: "Augmented Reality Connect 4 & AI Bot",
+    description: "An AR implementation of Connect 4 for iOS, with realistic physics and a bot opponent. Pieces can be placed via touch interaction and the bot utilizes min-maxing and alpha-beta pruning to never loose!",
     image: "/test.jpeg", 
-    link: "#"
+    link: "https://github.com/kwmndz/ConnectFourAR"
   },
   {
     title: "Star Atlas",
