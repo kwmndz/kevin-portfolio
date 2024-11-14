@@ -78,12 +78,14 @@ const ScrollIndicator = ({ planetTextOpacity }) => (
 
 const PlanetIllustration = ({ planetScale, planetY, planetOpacity, planetTextOpacity }) => (
   <motion.div 
-    className="fixed bottom-0 left-[40%] xs:left-[42%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] z-10 flex items-center justify-center"
+    className="fixed bottom-0 left-[40%] xs:left-[42%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] flex items-center justify-center"
     style={{
       scale: planetScale,
       y: planetY,
       opacity: planetOpacity,
       boxShadow: '0 -10px 50px rgba(41, 98, 255, 0.3)',
+      pointerEvents: 'none',
+      zIndex: 1,
     }}
   >
     <ScrollIndicator planetTextOpacity={planetTextOpacity} />
@@ -284,6 +286,12 @@ export default function Home() {
   const initialRocketOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const initialRocketRotate = useTransform(scrollY, [0, 500], [155, 155]);
 
+  const planetPointerEvents = useTransform(
+    scrollYProgress,
+    [0, 0.15],
+    ["auto", "none"]
+  );
+
   useEffect(() => {
     setIsMounted(true);
     let index = 0;
@@ -309,116 +317,129 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#1A0321] overflow-hidden relative" ref={scrollRef}>
       <AnimatedStars />
-      <PlanetIllustration 
-        planetScale={planetScale}
-        planetY={planetY}
-        planetOpacity={planetOpacity}
-        planetTextOpacity={planetTextOpacity}
-      />
+      
+      <motion.div
+        style={{
+          position: 'fixed',
+          width: '100%',
+          height: '100%',
+          pointerEvents: planetPointerEvents,
+          zIndex: 1,
+        }}
+      >
+        <PlanetIllustration 
+          planetScale={planetScale}
+          planetY={planetY}
+          planetOpacity={planetOpacity}
+          planetTextOpacity={planetTextOpacity}
+        />
+      </motion.div>
 
-      <section className="relative min-h-screen flex items-start justify-center px-4 sm:px-6 pt-20 sm:pt-32">
-        <motion.div
-          className="hidden lg:block fixed left-[15%] top-1/2 -translate-y-1/2 z-20 w-[200px] h-[400px]"
-          style={{ 
-            x: initialRocketX,
-            rotate: initialRocketRotate,
-            opacity: initialRocketOpacity,
-            scale: 0.9
-          }}
-        >
-          <RocketShip style={undefined} />
-        </motion.div>
-
-        <div className="text-center z-20 max-w-4xl">
+      <div className="relative z-10">
+        <section className="relative min-h-screen flex items-start justify-center px-4 sm:px-6 pt-20 sm:pt-32">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6"
-          >
-            <motion.div 
-              className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400 mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              Transmission Incoming...
-            </motion.div>
-            
-            <motion.h1 
-              className="text-3xl sm:text-4xl md:text-7xl font-bold text-white relative"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-                {text}
-              </span>
-            </motion.h1>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.4 }}
-            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto relative font-mono text-purple-400 px-4"
-            style={{
-              textShadow: '0 0 10px rgba(124, 58, 237, 0.5)',
-              letterSpacing: '0.05em',
-              border: '2px solid transparent',
-              borderImage: 'linear-gradient(45deg, #7c3aed 0%, #3730a3 100%)',
-              borderImageSlice: 1,
-              padding: '1rem',
-              backgroundColor: 'rgba(13, 14, 37, 0.7)',
-              backdropFilter: 'blur(2px)',
-              borderRadius: '8px',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            className="hidden lg:block fixed left-[15%] top-1/2 -translate-y-1/2 z-20 w-[200px] h-[400px]"
+            style={{ 
+              x: initialRocketX,
+              rotate: initialRocketRotate,
+              opacity: initialRocketOpacity,
+              scale: 0.9
             }}
           >
-            {fullSubText}
-            <span className="inline-block mx-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">🚀</span>
-          </motion.p>
+            <RocketShip style={undefined} />
+          </motion.div>
 
-          <SocialLinks />
-        </div>
+          <div className="text-center z-20 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-6"
+            >
+              <motion.div 
+                className="text-xs sm:text-sm uppercase tracking-[0.3em] text-purple-400 mb-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                Transmission Incoming...
+              </motion.div>
+              
+              <motion.h1 
+                className="text-3xl sm:text-4xl md:text-7xl font-bold text-white relative"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                  {text}
+                </span>
+              </motion.h1>
+            </motion.div>
 
-        <motion.div
-          className="hidden lg:block absolute right-[15%] top-[30%] z-20"
-          animate={{
-            y: [0, -10, 0],
-            rotate: [0, 3, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="w-32 h-32 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full animate-pulse" />
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2.4 }}
+              className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto relative font-mono text-purple-400 px-4"
+              style={{
+                textShadow: '0 0 10px rgba(124, 58, 237, 0.5)',
+                letterSpacing: '0.05em',
+                border: '2px solid transparent',
+                borderImage: 'linear-gradient(45deg, #7c3aed 0%, #3730a3 100%)',
+                borderImageSlice: 1,
+                padding: '1rem',
+                backgroundColor: 'rgba(13, 14, 37, 0.7)',
+                backdropFilter: 'blur(2px)',
+                borderRadius: '8px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+              }}
+            >
+              {fullSubText}
+              <span className="inline-block mx-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">🚀</span>
+            </motion.p>
+
+            <SocialLinks />
           </div>
-        </motion.div>
-      </section>
 
-      <section className="relative min-h-screen py-16 sm:py-32" id="projects">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.h2 
-            className="text-3xl sm:text-4xl font-bold text-center text-white mb-16"
-            style={{ opacity: projectsTitleOpacity }}
+          <motion.div
+            className="hidden lg:block absolute right-[15%] top-[30%] z-20"
+            animate={{
+              y: [0, -10, 0],
+              rotate: [0, 3, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           >
-            <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              System 1: Projects
-            </span>
-          </motion.h2>
+            <div className="w-32 h-32 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full animate-pulse" />
+            </div>
+          </motion.div>
+        </section>
 
-          <div className="space-y-32 sm:space-y-64">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
-            ))}
+        <section className="relative min-h-screen py-16 sm:py-32" id="projects">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <motion.h2 
+              className="text-3xl sm:text-4xl font-bold text-center text-white mb-16"
+              style={{ opacity: projectsTitleOpacity }}
+            >
+              <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+                System 1: Projects
+              </span>
+            </motion.h2>
+
+            <div className="space-y-32 sm:space-y-64">
+              {projects.map((project, index) => (
+                <ProjectCard key={project.title} project={project} index={index} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-      <SkillsConstellation />
+        </section>
+        <SkillsConstellation />
+      </div>
     </div>
   );
 }

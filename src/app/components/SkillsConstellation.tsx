@@ -26,29 +26,28 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  // Technical Skills - Positioned on left side with more spacing
-  { name: 'Python', icon: SiPython, proficiency: 5, position: { x: 15, y: 25 }, category: 'technical' },
-  { name: 'C++', icon: SiCplusplus, proficiency: 5, position: { x: 30, y: 20 }, category: 'technical' },
-  { name: 'Unity', icon: SiUnity, proficiency: 4, position: { x: 45, y: 25 }, category: 'technical' },
-  { name: 'C#', icon: SiCsharp, proficiency: 4, position: { x: 20, y: 40 }, category: 'technical' },
-  { name: 'Unreal', icon: SiUnrealengine, proficiency: 3, position: { x: 35, y: 35 }, category: 'technical' },
-  { name: 'GitHub', icon: Github, proficiency: 4, position: { x: 15, y: 55 }, category: 'technical' },
-  { name: 'Linux', icon: SiLinux, proficiency: 3, position: { x: 30, y: 50 }, category: 'technical' },
-  { name: 'C', icon: SiC, proficiency: 3, position: { x: 45, y: 55 }, category: 'technical' },
-  { name: 'Databricks', icon: SiDatabricks, proficiency: 3, position: { x: 20, y: 70 }, category: 'technical' },
-  { name: 'SQL', icon: Database, proficiency: 3, position: { x: 35, y: 65 }, category: 'technical' },
-  
+  // Technical Skills - Shifted left by adjusting x coordinates
+  { name: 'Python', icon: SiPython, proficiency: 5, position: { x: 8, y: 25 }, category: 'technical' },
+  { name: 'C++', icon: SiCplusplus, proficiency: 5, position: { x: 23, y: 20 }, category: 'technical' },
+  { name: 'Unity', icon: SiUnity, proficiency: 4, position: { x: 38, y: 25 }, category: 'technical' },
+  { name: 'C#', icon: SiCsharp, proficiency: 4, position: { x: 13, y: 40 }, category: 'technical' },
+  { name: 'Unreal', icon: SiUnrealengine, proficiency: 3, position: { x: 28, y: 35 }, category: 'technical' },
+  { name: 'GitHub', icon: Github, proficiency: 4, position: { x: 8, y: 55 }, category: 'technical' },
+  { name: 'Linux', icon: SiLinux, proficiency: 3, position: { x: 21, y: 50 }, category: 'technical' },
+  { name: 'C', icon: SiC, proficiency: 3, position: { x: 38, y: 55 }, category: 'technical' },
+  { name: 'Databricks', icon: SiDatabricks, proficiency: 3, position: { x: 13, y: 70 }, category: 'technical' },
+  { name: 'SQL', icon: Database, proficiency: 3, position: { x: 28, y: 65 }, category: 'technical' },
   // Interpersonal Skills - Positioned on right side with more spacing
   { name: 'Leadership', icon: Users, proficiency: 5, position: { x: 65, y: 25 }, category: 'interpersonal' },
   { name: 'Team Collaboration', icon: Users, proficiency: 5, position: { x: 80, y: 20 }, category: 'interpersonal' },
   { name: 'Curiosity', icon: Lightbulb, proficiency: 4, position: { x: 85, y: 35 }, category: 'interpersonal' },
-  { name: 'Communication', icon: MessageSquare, proficiency: 4, position: { x: 70, y: 45 }, category: 'interpersonal' },
-  { name: 'Adaptability', icon: Brain, proficiency: 3, position: { x: 80, y: 55 }, category: 'interpersonal' },
+  { name: 'Communication', icon: MessageSquare, proficiency: 4, position: { x: 70, y: 40 }, category: 'interpersonal' },
+  { name: 'Adaptability', icon: Brain, proficiency: 3, position: { x: 75, y: 55 }, category: 'interpersonal' }, // Adjusted position for better hover
 ];
 
 export const SkillsConstellation = () => {
   return (
-    <section className="relative min-h-screen py-32" id="skills">
+    <section className="relative min-h-screen py-32 z-20" id="skills">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2 
           className="text-3xl sm:text-4xl font-bold text-center text-white mb-16"
@@ -61,10 +60,10 @@ export const SkillsConstellation = () => {
           </span>
         </motion.h2>
 
-        <div className="relative w-full h-[800px] bg-[#1A0321]/50 rounded-lg backdrop-blur-sm">
+        <div className="relative w-full h-[800px]">
           {/* Section Headers */}
           <motion.div 
-            className="absolute left-[10%] top-[10%] -translate-x-1/2 text-2xl font-bold"
+            className="absolute left-[10%] top-[10%] -translate-x-1/2 text-2xl font-bold hidden lg:block"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -75,7 +74,7 @@ export const SkillsConstellation = () => {
           </motion.div>
 
           <motion.div 
-            className="absolute left-[60%] top-[10%] -translate-x-1/2 text-2xl font-bold whitespace-nowrap"
+            className="absolute left-[60%] top-[10%] -translate-x-1/2 text-2xl font-bold whitespace-nowrap hidden lg:block"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -178,7 +177,7 @@ export const SkillsConstellation = () => {
         </div>
 
         {/* Legend */}
-        <div className="mt-0 flex justify-center gap-8">
+        <div className="mt-[-60px] flex justify-center gap-8">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500" />
             <span className="text-gray-400 text-sm">Technical Skills</span>
