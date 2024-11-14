@@ -29,16 +29,8 @@ const AnimatedStars = () => (
   </div>
 );
 
-const PlanetIllustration = ({ planetScale, planetY, planetOpacity, planetTextOpacity }) => (
-  <motion.div 
-    className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] z-10 flex items-center justify-center"
-    style={{
-      scale: planetScale,
-      y: planetY,
-      opacity: planetOpacity,
-      boxShadow: '0 -10px 50px rgba(41, 98, 255, 0.3)',
-    }}
-  >
+const ScrollIndicator = ({ planetTextOpacity }) => (
+  <>
     <motion.div
       style={{ opacity: planetTextOpacity }}
       className="text-center translate-y-[-50%] hidden md:block"
@@ -59,6 +51,41 @@ const PlanetIllustration = ({ planetScale, planetY, planetOpacity, planetTextOpa
         </motion.div>
       </div>
     </motion.div>
+
+    {/* Mobile version in center of viewport */}
+    <motion.div
+      style={{ opacity: planetTextOpacity }}
+      className="md:hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 z-20 text-center"
+    >
+      <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+        Explore My Universe
+      </h2>
+      <div className="flex flex-col items-center justify-center">
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="flex items-center gap-1"
+        >
+          <ChevronDown className="text-gray-400 w-4 h-4" />
+          <ChevronDown className="text-gray-400 w-4 h-4" />
+          <ChevronDown className="text-gray-400 w-4 h-4" />
+        </motion.div>
+      </div>
+    </motion.div>
+  </>
+);
+
+const PlanetIllustration = ({ planetScale, planetY, planetOpacity, planetTextOpacity }) => (
+  <motion.div 
+    className="fixed bottom-0 left-[40%] xs:left-[42%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] z-10 flex items-center justify-center"
+    style={{
+      scale: planetScale,
+      y: planetY,
+      opacity: planetOpacity,
+      boxShadow: '0 -10px 50px rgba(41, 98, 255, 0.3)',
+    }}
+  >
+    <ScrollIndicator planetTextOpacity={planetTextOpacity} />
   </motion.div>
 );
 
