@@ -88,9 +88,22 @@ export default function Home() {
         <section className="relative min-h-screen flex items-start justify-center px-4 sm:px-6 pt-20 sm:pt-32">
           <motion.div
             className="hidden lg:block absolute left-[15%] top-1/2 -translate-y-1/2 z-20 w-[200px] h-[400px]"
+            initial={{ 
+              x: "-100vw",
+              y: "-100vh",
+              rotate: 45
+            }}
+            animate={{
+              x: 0,
+              y: 0,
+              rotate: 155
+            }}
+            transition={{
+              delay: 1.3,
+              duration: 1.5,
+              ease: "easeOut"
+            }}
             style={{ 
-              x: initialRocketX,
-              rotate: initialRocketRotate,
               opacity: initialRocketOpacity,
               scale: 0.9
             }}
