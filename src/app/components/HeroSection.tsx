@@ -8,17 +8,19 @@ const SocialLinks = () => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ delay: 2.5 }}
+    transition={{ delay: 2.2 }}
     className="flex justify-center gap-6 mt-8"
   >
     {[
-      { icon: Github, href: "#" },
-      { icon: Linkedin, href: "#" },
-      { icon: Mail, href: "#" }
+      { icon: Github, href: "https://github.com/kwmndz" },
+      { icon: Linkedin, href: "https://www.linkedin.com/in/kwmndz" },
+      { icon: Mail, href: "mailto:kwmndz@umich.edu" }
     ].map((item, index) => (
       <motion.a
         key={index}
         href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="text-gray-400 hover:text-white transition-colors"
@@ -35,17 +37,25 @@ export function HeroSection() {
   const fullSubText = "A Software Engineer charting the edge of what's possible, with code as my compass and curiosity as my guide.";
 
   useEffect(() => {
+    const initialDelay = 800; // Delay in milliseconds
     let index = 0;
-    const interval = setInterval(() => {
-      if (index <= fullText.length) {
-        setText(fullText.substring(0, index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 80);
+    let interval: NodeJS.Timeout;
 
-    return () => clearInterval(interval);
+    const timeout = setTimeout(() => {
+      interval = setInterval(() => {
+        if (index <= fullText.length) {
+          setText(fullText.substring(0, index));
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 80);
+    }, initialDelay);
+
+    return () => {
+      clearTimeout(timeout);
+      if (interval) clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -69,7 +79,7 @@ export function HeroSection() {
           className="text-3xl sm:text-4xl md:text-7xl font-bold text-white relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
         >
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text inline-block">
             {text}
@@ -99,13 +109,8 @@ export function HeroSection() {
         <span className="inline-block mx-2 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">🚀</span>
       </motion.p>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3.2, duration: 0.8 }}
-      >
-        <SocialLinks />
-      </motion.div>
+    <SocialLinks />
+
     </div>
   );
 } 
