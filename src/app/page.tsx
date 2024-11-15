@@ -52,6 +52,11 @@ const ExperienceSection = dynamic(() =>
     ssr: false
 });
 
+const StarTrail = dynamic(() => import('./components/StarTrail'), {
+  ssr: false,
+  loading: () => null
+});
+
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const scrollRef = useRef(null);
@@ -126,6 +131,7 @@ export default function Home() {
         <SkillsConstellation />
         <ExperienceSection />
       </div>
+      <StarTrail />
     </div>
   );
 }
