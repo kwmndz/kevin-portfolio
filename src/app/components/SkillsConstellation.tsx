@@ -28,7 +28,7 @@ export default function SkillsConstellation() {
           viewport={{ once: true }}
         >
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            System 2: Skill Constellations
+            Skill Constellations
           </span>
         </motion.h2>
 
@@ -41,7 +41,7 @@ export default function SkillsConstellation() {
             viewport={{ once: true }}
           >
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              Constellation: Technical
+              Technical Constellation
             </span>
           </motion.div>
 
@@ -52,7 +52,7 @@ export default function SkillsConstellation() {
             viewport={{ once: true }}
           >
             <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-              Constellation: Interpersonal
+              Interpersonal Constellation
             </span>
           </motion.div>
 

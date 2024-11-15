@@ -23,10 +23,10 @@ export default function ProjectsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2 
           className="text-3xl sm:text-4xl font-bold text-center text-white mb-16"
-          style={{ opacity: projectsTitleOpacity }}
+          style={{ opacity: 1 }}
         >
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            System 1: Projects
+            Project Belt
           </span>
         </motion.h2>
 

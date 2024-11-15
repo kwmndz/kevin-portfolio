@@ -16,7 +16,7 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
         >
           <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            System 3: Career Trajectory
+            Career Trajectory
           </span>
         </motion.h2>
 

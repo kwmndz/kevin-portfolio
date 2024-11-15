@@ -65,7 +65,7 @@ export default function Home() {
 
   const planetScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.5]);
   const planetY = useTransform(scrollYProgress, [0, 0.2], ['40%', '0%']);
-  const planetOpacity = useTransform(scrollYProgress, [0.05, 0.1], [1, 0]);
+  const planetOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   const planetTextOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   const initialRocketX = useTransform(scrollY, [0, 500], ['15%', '15%']);
