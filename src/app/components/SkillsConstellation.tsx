@@ -17,7 +17,7 @@ import {
 import { SiPython, SiCplusplus, SiUnity, SiCsharp, SiUnrealengine, SiLinux, SiC, SiDatabricks } from 'react-icons/si';
 import { skills } from '../utils/constants';
 
-export const SkillsConstellation = () => {
+export default function SkillsConstellation() {
   return (
     <section className="relative min-h-screen py-32 z-20" id="skills">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -162,4 +162,4 @@ export const SkillsConstellation = () => {
       </div>
     </section>
   );
-}; 
+} 

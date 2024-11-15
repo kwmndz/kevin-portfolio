@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { workExperience } from '../utils/constants';
 import { Calendar, MapPin, Rocket, Code, Briefcase } from 'lucide-react';
 
-export const ExperienceSection = () => {
+export default function ExperienceSection() {
   return (
     <section className="relative min-h-screen py-32 z-20" id="experience">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -139,4 +139,4 @@ export const ExperienceSection = () => {
       </div>
     </section>
   );
-}; 
+} 

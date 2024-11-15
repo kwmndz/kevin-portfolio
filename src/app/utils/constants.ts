@@ -69,12 +69,71 @@ export const skills: Skill[] = [
 //              Background Animation
 // =============================================
 
+// Hard coded star positions for background animation
+// export const starPositions = [
+//   { left: '15%', top: '23%', duration: 3 },
+//   { left: '82%', top: '12%', duration: 4 },
+//   { left: '45%', top: '76%', duration: 2 },
+//   { left: '67%', top: '34%', duration: 3 },
+//   { left: '28%', top: '89%', duration: 4 },
+//   { left: '93%', top: '45%', duration: 2 },
+//   { left: '8%', top: '67%', duration: 3 },
+//   { left: '52%', top: '21%', duration: 4 },
+//   { left: '73%', top: '56%', duration: 2 },
+//   { left: '31%', top: '43%', duration: 3 },
+//   { left: '88%', top: '78%', duration: 4 },
+//   { left: '12%', top: '34%', duration: 2 },
+//   { left: '64%', top: '90%', duration: 3 },
+//   { left: '41%', top: '15%', duration: 4 },
+//   { left: '95%', top: '67%', duration: 2 },
+//   { left: '25%', top: '54%', duration: 3 },
+//   { left: '78%', top: '32%', duration: 4 },
+//   { left: '19%', top: '87%', duration: 2 },
+//   { left: '59%', top: '43%', duration: 3 },
+//   { left: '36%', top: '65%', duration: 4 },
+//   { left: '83%', top: '21%', duration: 2 },
+//   { left: '14%', top: '76%', duration: 3 },
+//   { left: '68%', top: '45%', duration: 4 },
+//   { left: '42%', top: '89%', duration: 2 },
+//   { left: '91%', top: '34%', duration: 3 },
+//   { left: '27%', top: '67%', duration: 4 },
+//   { left: '75%', top: '12%', duration: 2 },
+//   { left: '16%', top: '54%', duration: 3 },
+//   { left: '62%', top: '78%', duration: 4 },
+//   { left: '38%', top: '32%', duration: 2 },
+//   { left: '85%', top: '65%', duration: 3 },
+//   { left: '22%', top: '43%', duration: 4 },
+//   { left: '71%', top: '87%', duration: 2 },
+//   { left: '45%', top: '23%', duration: 3 },
+//   { left: '93%', top: '56%', duration: 4 },
+//   { left: '11%', top: '89%', duration: 2 },
+//   { left: '58%', top: '34%', duration: 3 },
+//   { left: '33%', top: '76%', duration: 4 },
+//   { left: '81%', top: '45%', duration: 2 },
+//   { left: '17%', top: '67%', duration: 3 },
+//   { left: '64%', top: '21%', duration: 4 },
+//   { left: '39%', top: '54%', duration: 2 },
+//   { left: '87%', top: '89%', duration: 3 },
+//   { left: '24%', top: '32%', duration: 4 },
+//   { left: '72%', top: '65%', duration: 2 },
+//   { left: '48%', top: '43%', duration: 3 },
+//   { left: '95%', top: '78%', duration: 4 },
+//   { left: '13%', top: '12%', duration: 2 },
+//   { left: '61%', top: '87%', duration: 3 },
+//   { left: '35%', top: '56%', duration: 4 }
+// ];
+
+// Removed for performance reasons :(
 // Generate random star positions for background animation
 export const starPositions = Array.from({ length: 50 }, () => ({
   left: `${Math.floor(Math.random() * 100)}%`,
   top: `${Math.floor(Math.random() * 100)}%`, 
   duration: Math.floor(Math.random() * 3) + 2,
 })); 
+
+// =============================================
+//              Work Experience
+// =============================================
 
 export interface WorkExperience {
   company: string;
@@ -85,10 +144,6 @@ export interface WorkExperience {
   responsibilities: string[];
   techStack: string[];
 }
-
-// =============================================
-//              Work Experience
-// =============================================
 
 export const workExperience: WorkExperience[] = [
   {
