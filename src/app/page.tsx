@@ -16,6 +16,11 @@ const AnimatedStars = dynamic(() =>
     ssr: false
 });
 
+const SpaceDebrisField = dynamic(() => import('./components/SpaceDebrisField'), {
+  ssr: false,
+  loading: () => null
+});
+
 const ProjectsSection = dynamic(() => 
   import('./components/ProjectsSection').then(mod => mod.default), {
     loading: () => (
@@ -50,6 +55,11 @@ const ExperienceSection = dynamic(() =>
       </div>
     ),
     ssr: false
+});
+
+const RocketTrail = dynamic(() => import('./components/RocketTrail'), {
+  ssr: false,
+  loading: () => null
 });
 
 const StarTrail = dynamic(() => import('./components/StarTrail'), {
@@ -88,6 +98,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#1A0321] overflow-hidden relative" ref={scrollRef}>
       <AnimatedStars />      
+      <SpaceDebrisField />
 
       <div className="relative z-10">
         <section className="relative min-h-screen flex items-start justify-center px-4 sm:px-6 pt-20 sm:pt-32">
@@ -131,7 +142,10 @@ export default function Home() {
         <SkillsConstellation />
         <ExperienceSection />
       </div>
+
+      {/* <RocketTrail /> */}
       <StarTrail />
+
     </div>
   );
 }

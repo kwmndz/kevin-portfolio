@@ -85,11 +85,11 @@ export function PlanetIllustration({
       initial={{ opacity: 0, scale: 0.8, y: "40%" }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 2.2 }}
-      className="fixed bottom-0 left-[40%] xs:left-[42%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] flex items-center justify-center"
+      className="absolute bottom-0 left-[40%] xs:left-[42%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] flex items-center justify-center"
       style={{
         scale: planetScale,
         y: planetY,
-        opacity: planetOpacity,
+        opacity: 1,
         boxShadow: '0 -10px 50px rgba(41, 98, 255, 0.3)',
         pointerEvents: 'none',
         zIndex: 1,
