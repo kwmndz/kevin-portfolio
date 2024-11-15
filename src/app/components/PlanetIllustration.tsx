@@ -70,14 +70,14 @@ const ScrollIndicator = ({ planetTextOpacity }: ScrollIndicatorProps) => (
 interface PlanetIllustrationProps {
   planetScale: MotionValue<number>;
   planetY: MotionValue<string>;
-  planetOpacity: MotionValue<number>;
+  //planetOpacity: MotionValue<number>;
   planetTextOpacity: MotionValue<number>;
 }
 
 export function PlanetIllustration({ 
   planetScale, 
   planetY, 
-  planetOpacity, 
+  //planetOpacity, 
   planetTextOpacity 
 }: PlanetIllustrationProps) {
   return (

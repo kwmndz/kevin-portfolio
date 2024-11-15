@@ -61,15 +61,15 @@ const ExperienceSection = dynamic(() =>
     ssr: false
 });
 
-const RocketTrail = dynamic(() => import('./components/RocketTrail'), {
-  ssr: false,
-  loading: () => null
-});
+//const RocketTrail = dynamic(() => import('./components/RocketTrail'), {
+//  ssr: false,
+//  loading: () => null
+//});
 
-const StarTrail = dynamic(() => import('./components/StarTrail'), {
-  ssr: false,
-  loading: () => null
-});
+//const StarTrail = dynamic(() => import('./components/StarTrail'), {
+//  ssr: false,
+//  loading: () => null
+//});
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
@@ -84,12 +84,12 @@ export default function Home() {
 
   const planetScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.5]);
   const planetY = useTransform(scrollYProgress, [0, 0.2], ['40%', '0%']);
-  const planetOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  //const planetOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   const planetTextOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
-  const initialRocketX = useTransform(scrollY, [0, 500], ['15%', '15%']);
+  //const initialRocketX = useTransform(scrollY, [0, 500], ['15%', '15%']);
   const initialRocketOpacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const initialRocketRotate = useTransform(scrollY, [0, 500], [155, 155]);
+  //const initialRocketRotate = useTransform(scrollY, [0, 500], [155, 155]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -136,7 +136,7 @@ export default function Home() {
           <PlanetIllustration 
             planetScale={planetScale}
             planetY={planetY}
-            planetOpacity={planetOpacity}
+            //planetOpacity={planetOpacity}
             planetTextOpacity={planetTextOpacity}
           />
         </section>

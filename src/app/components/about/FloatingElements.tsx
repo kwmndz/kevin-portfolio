@@ -78,7 +78,7 @@ export function FloatingElements() {
 
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {elements.map((element, index) => (
+      {elements.map((element) => (
         <motion.div
           key={element.label}
           className="absolute"

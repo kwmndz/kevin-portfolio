@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import './globals.css';
 import React from 'react';
+import { LoadingScreen } from './components/LoadingScreen';
+import { useLoadingScreen } from './hooks/useLoadingScreen';
 
 export default function RootLayout({
   children,
@@ -12,10 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isLoading = useLoadingScreen();
 
   return (
     <html lang="en">
       <body>
+        <AnimatePresence>
+          {isLoading && <LoadingScreen />}
+        </AnimatePresence>
+
         {/* Navigation Bar */}
         <nav className="fixed top-0 w-full z-50 px-6 py-4">
           <div className="max-w-8xl mx-auto flex justify-between items-center md">
@@ -49,8 +56,15 @@ export default function RootLayout({
             </motion.div>
           </div>
         </nav>
-        {children}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 2 }}
+        >
+          {children}
+        </motion.div>
       </body>
     </html>
   );
-} 
+}

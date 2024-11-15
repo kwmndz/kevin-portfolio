@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 
 interface StarParticle {
   id: number;
@@ -16,17 +16,17 @@ export default function StarTrail() {
   const cursorY = useMotionValue(0);
 
   // Smooth spring physics for trailing effect
-  const smoothX = useSpring(cursorX, {
-    damping: 25,
-    stiffness: 200,
-    mass: 0.1
-  });
-  const smoothY = useSpring(cursorY, {
-    damping: 25,
-    stiffness: 200,
-    mass: 0.1
-  });
-
+  //const smoothX = useSpring(cursorX, {
+  //  damping: 25,
+  //  stiffness: 200,
+  //  mass: 0.1
+  //});
+  //const smoothY = useSpring(cursorY, {
+  //  damping: 25,
+  //  stiffness: 200,
+  //  mass: 0.1
+  //});
+  //
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       cursorX.set(e.clientX);

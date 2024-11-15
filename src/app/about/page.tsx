@@ -50,7 +50,7 @@ export default function About() {
                           shadow-[0_0_30px_rgba(147,51,234,0.3)]"
               >
                 <Image
-                  src="/your-image.jpg" // Add your image path here
+                  src="/test.png" // Add your image path here
                   alt="Profile"
                   fill
                   className="object-cover"
@@ -65,7 +65,7 @@ export default function About() {
                   transition={{ delay: 0.4, duration: 0.8 }}
                   className="text-3xl md:text-4xl font-bold text-purple-300 mb-4"
                 >
-                  Your Name
+                  YAP YAP YAP
                 </motion.h1>
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }}
@@ -73,8 +73,7 @@ export default function About() {
                   transition={{ delay: 0.5, duration: 0.8 }}
                   className="text-purple-100 text-lg leading-relaxed mb-6"
                 >
-                  Your compelling bio goes here. Make it personal and engaging.
-                  Tell your story and what drives you in the tech world.
+                 YAP YAP YAP  YAP YAP YAPYAP YAP YAPYAP YAP YAPYAP YAP YAPYAP YAP YAPYAP YAP YAPYAP YAP YAP
                 </motion.p>
               </div>
             </div>

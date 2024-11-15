@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import { useScroll, useMotionValue, MotionValue } from 'framer-motion';
+import { useScroll, useMotionValue} from 'framer-motion';
 import Debris from './Debris';
 
 interface DebrisObject {

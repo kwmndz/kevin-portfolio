@@ -123,7 +123,6 @@ export const skills: Skill[] = [
 //   { left: '35%', top: '56%', duration: 4 }
 // ];
 
-// Removed for performance reasons :(
 // Generate random star positions for background animation
 export const starPositions = Array.from({ length: 50 }, () => ({
   left: `${Math.floor(Math.random() * 100)}%`,

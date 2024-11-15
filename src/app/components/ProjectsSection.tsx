@@ -1,18 +1,18 @@
-"use client";
+//"use client";
 
-import { motion, useTransform, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { projects } from '../utils/constants';
 import { ProjectCard } from './ProjectCard';
 import { useRef } from 'react';
 
 export default function ProjectsSection() {
   const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"]
-  });
-
-  const projectsTitleOpacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
+  //const { scrollYProgress } = useScroll({
+  //  target: sectionRef,
+  //  offset: ["start start", "end end"]
+  //});
+  
+  //const projectsTitleOpacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
 
   return (
     <section 

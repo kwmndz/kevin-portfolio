@@ -33,7 +33,7 @@ export default function RocketTrail() {
 
   const createParticle = (mouseX: number, mouseY: number, type: 'flame' | 'smoke' | 'spark') => {
     const angle = Math.atan2(mouseY - prevPosition.y, mouseX - prevPosition.x);
-    const velocity = Math.hypot(mouseX - prevPosition.x, mouseY - prevPosition.y);
+    //const velocity = Math.hypot(mouseX - prevPosition.x, mouseY - prevPosition.y);
     
     const getRandomColor = () => {
       switch(type) {

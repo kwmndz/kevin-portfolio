@@ -2,19 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Github, 
-  Terminal, 
-  Database, 
-  Users, 
-  MessageSquare, 
-  Lightbulb,
-  Brain,
-  Code,
-  Gamepad2,
-  LineChart
-} from 'lucide-react';
-import { SiPython, SiCplusplus, SiUnity, SiCsharp, SiUnrealengine, SiLinux, SiC, SiDatabricks } from 'react-icons/si';
 import { skills } from '../utils/constants';
 
 export default function SkillsConstellation() {
