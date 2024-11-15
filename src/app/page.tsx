@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { HeroSection } from './components/HeroSection';
 import { PlanetIllustration } from './components/PlanetIllustration';
 import { RocketShip } from './components/RocketShip';
+import SpaceDebrisField from './components/SpaceDebrisField';
 
 // Dynamically import heavy components with proper default exports
 const AnimatedStars = dynamic(() =>
@@ -14,11 +15,6 @@ const AnimatedStars = dynamic(() =>
       <div className="fixed inset-0 z-0 bg-[#1A0321]" />
     ),
     ssr: false
-});
-
-const SpaceDebrisField = dynamic(() => import('./components/SpaceDebrisField'), {
-  ssr: false,
-  loading: () => null
 });
 
 const ProjectsSection = dynamic(() => 

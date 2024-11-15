@@ -32,10 +32,14 @@ export default function RootLayout({
               initial={{ opacity: 0.55, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              {['Projects', 'Experience', 'Contact'].map((item) => (
+              {['Projects', 'Experience', 'Home', 'About'].map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={
+                    item === 'Home' ? '/' :
+                    item === 'About' ? `/${item.toLowerCase()}` : 
+                    `#${item.toLowerCase()}`
+                  }
                   className="text-gray-300 hover:text-white transition-colors relative group"
                 >
                   {item}
