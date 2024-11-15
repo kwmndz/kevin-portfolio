@@ -105,7 +105,7 @@ export default function SkillsConstellation() {
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (index % 10) * 0.15 }} // Index mod is hard coded in just change to amount of skills
+              transition={{ duration: 0.5, delay: (index % 10) * 0.10 }} // Index mod is hard coded in just change to amount of skills
             >
               <motion.div
                 className="relative group cursor-pointer"

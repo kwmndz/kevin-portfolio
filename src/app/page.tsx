@@ -6,9 +6,17 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { HeroSection } from './components/HeroSection';
 import { PlanetIllustration } from './components/PlanetIllustration';
 import { RocketShip } from './components/RocketShip';
-import SpaceDebrisField from './components/SpaceDebrisField';
+// import ProjectsSection from './components/ProjectsSection';
 
 // Dynamically import heavy components with proper default exports
+const SpaceDebrisField = dynamic(() => 
+  import('./components/SpaceDebrisField').then(mod => mod.default), {
+    loading: () => (
+      <div className="fixed inset-0 z-0 bg-[#1A0321]" />
+    ),
+    ssr: false
+});
+
 const AnimatedStars = dynamic(() =>
   import('./components/AnimatedStars').then(mod => mod.AnimatedStars), {
     loading: () => (
@@ -140,7 +148,7 @@ export default function Home() {
       </div>
 
       {/* <RocketTrail /> */}
-      <StarTrail />
+      {/* <StarTrail /> */}
 
     </div>
   );
