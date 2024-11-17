@@ -61,10 +61,10 @@ const ExperienceSection = dynamic(() =>
     ssr: false
 });
 
-//const RocketTrail = dynamic(() => import('./components/RocketTrail'), {
-//  ssr: false,
-//  loading: () => null
-//});
+const RocketTrail = dynamic(() => import('./components/RocketTrail'), {
+ ssr: false,
+ loading: () => null
+});
 
 //const StarTrail = dynamic(() => import('./components/StarTrail'), {
 //  ssr: false,
@@ -88,7 +88,7 @@ export default function Home() {
   const planetTextOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   //const initialRocketX = useTransform(scrollY, [0, 500], ['15%', '15%']);
-  const initialRocketOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const initialRocketOpacity = useTransform(scrollY, [0, 800], [1, 0]);
   //const initialRocketRotate = useTransform(scrollY, [0, 500], [155, 155]);
 
   useEffect(() => {
@@ -147,7 +147,7 @@ export default function Home() {
         <ExperienceSection />
       </div>
 
-      {/* <RocketTrail /> */}
+      <RocketTrail />
       {/* <StarTrail /> */}
 
     </div>
