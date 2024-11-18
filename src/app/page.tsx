@@ -8,6 +8,7 @@ import { PlanetIllustration } from './components/PlanetIllustration';
 import { RocketShip } from './components/RocketShip';
 // import ProjectsSection from './components/ProjectsSection';
 // import { VoidAnomaly } from './components/VoidAnomaly';
+import { ContactSection } from './components/ContactSection';
 
 // Dynamically import heavy components with proper default exports
 const SpaceDebrisField = dynamic(() => 
@@ -169,6 +170,7 @@ export default function Home() {
         <ProjectsSection />
         <SkillsConstellation />
         <ExperienceSection />
+        <ContactSection />
       </div>
 
       {isRocketTrailActive && <RocketTrail />}
