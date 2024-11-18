@@ -7,7 +7,7 @@ import { HeroSection } from './components/HeroSection';
 import { PlanetIllustration } from './components/PlanetIllustration';
 import { RocketShip } from './components/RocketShip';
 // import ProjectsSection from './components/ProjectsSection';
-import { VoidAnomaly } from './components/VoidAnomaly';
+// import { VoidAnomaly } from './components/VoidAnomaly';
 
 // Dynamically import heavy components with proper default exports
 const SpaceDebrisField = dynamic(() => 
@@ -67,6 +67,13 @@ const RocketTrail = dynamic(() => import('./components/RocketTrail'), {
  loading: () => null
 });
 
+const VoidAnomaly = dynamic(
+  () => import('./components/VoidAnomaly').then(mod => mod.VoidAnomaly),
+  {
+    ssr: false
+  }
+);
+
 //const StarTrail = dynamic(() => import('./components/StarTrail'), {
 //  ssr: false,
 //  loading: () => null
@@ -112,11 +119,6 @@ export default function Home() {
 
       <div className="relative z-10">
         <section className="relative min-h-screen flex items-start justify-center px-4 sm:px-6 pt-20 sm:pt-32">
-          <VoidAnomaly 
-            onActivate={handleAnomalyActivate} 
-            isActive={isRocketTrailActive} 
-          />
-          
           <motion.div
             className="hidden lg:block absolute left-[15%] top-1/2 -translate-y-1/2 z-20 w-[200px] h-[400px]"
             initial={{ 
@@ -150,6 +152,17 @@ export default function Home() {
             //planetOpacity={planetOpacity}
             planetTextOpacity={planetTextOpacity}
           />
+          <motion.div
+            className="hidden lg:block"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 1 }}
+          >
+            <VoidAnomaly 
+              onActivate={handleAnomalyActivate} 
+              isActive={isRocketTrailActive} 
+            />
+          </motion.div>
         </section>
 
         {/* Lazy load the rest of the sections */}

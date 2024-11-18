@@ -19,7 +19,7 @@ export default function RocketTrail() {
   const particles = useRef<Particle[]>([]);
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
-  const prevPosition = useRef({ x: 0, y: 0 });
+  const prevPosition = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
   // Smooth spring physics for rocket movement
   const smoothX = useSpring(cursorX, {
