@@ -10,6 +10,15 @@ const AnimatedStars = dynamic(() =>
     loading: () => <div className="fixed inset-0 z-0 bg-[#1A0321]" />,
     ssr: false
 });
+const SpaceDebrisField = dynamic(() => 
+  import('../components/SpaceDebrisField').then(mod => mod.default), {
+    loading: () => (
+      <div className="fixed inset-0 z-0 bg-[#1A0321]" />
+    ),
+    ssr: false
+});
+
+
 
 const FloatingElements = dynamic(() =>
   import('../components/about/FloatingElements').then(mod => mod.FloatingElements), {
@@ -29,7 +38,8 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#1A0321] overflow-hidden relative">
       <AnimatedStars />
-      
+      <SpaceDebrisField />
+
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
         {/* Central Profile Section */}
         <motion.div 

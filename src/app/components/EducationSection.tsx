@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { Rocket, Radio, Atom, Binary, Telescope } from 'lucide-react';
+import { Rocket, Radio, Atom, Binary, Telescope, Mail } from 'lucide-react';
 
 export function EducationSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -117,6 +117,22 @@ export function EducationSection() {
                 </div>
               </div>
             </div>
+
+            {/* Communication Channels */}
+            <div className="bg-purple-900/20 backdrop-blur-sm rounded-lg border border-purple-500/30 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Mail className="w-5 h-5 text-purple-400" />
+                <h3 className="text-lg font-bold text-purple-300">COMMUNICATION CHANNELS</h3>
+              </div>
+              <div className="space-y-3 font-mono">
+                <div className="text-purple-200">
+                  {'>'}{'>'} Primary: kevinmendez2706@gmail.com
+                </div>
+                <div className="text-purple-200">
+                  {'>'}{'>'} Academic: kwmndz@umich.edu
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Right Terminal */}
@@ -134,10 +150,13 @@ export function EducationSection() {
               </div>
               <div className="space-y-3">
                 <div className="text-purple-200 font-mono">
-                  {'>'}{'>'} Michigan Research and Discovery Scholars
+                  {'>'}{'>'} MAVRIC Lab
                 </div>
                 <div className="text-purple-400 text-sm">
-                  Elite Research Program (Top 150 of 8500 Students)
+                  Enhancing Human-Robot Interaction through UGV Path Planning in Unreal Engine
+                </div>
+                <div className="text-purple-400 text-sm italic">
+                  *Further mission details available in Experience Section
                 </div>
               </div>
             </div>
@@ -148,24 +167,39 @@ export function EducationSection() {
                 <Atom className="w-5 h-5 text-purple-400" />
                 <h3 className="text-lg font-bold text-purple-300">SPECIAL OPERATIONS</h3>
               </div>
-              <div className="space-y-3">
-                <div className="text-purple-200 font-mono">
-                  {'>'}{'>'} CLAWS Research Initiative
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-xl font-bold text-purple-300 mb-2">CLAWS Research Initiative</h4>
+                  <div className="text-purple-400 text-sm mb-2">
+                    Collaborative Lab For Advancing Work in Space
+                  </div>
+                  <div className="text-purple-200 font-mono mb-2">
+                    {'>'}{'>'} Role: AR Development Division
+                  </div>
+                  <a 
+                    href="https://claws.engin.umich.edu" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded-md transition-colors border border-purple-500/30"
+                  >
+                    Access CLAWS Portal →
+                  </a>
                 </div>
-                <div className="text-purple-400 text-sm mb-2">
-                  Collaborative Lab For Advancing Work in Space
+
+                <div>
+                  <h4 className="text-xl font-bold text-purple-300 mb-2">Michigan Research and Discovery Scholars</h4>
+                  <div className="text-purple-400 text-sm mb-2">
+                    Elite Research Program (Top 150 of 8500 Students)
+                  </div>
+                  <a 
+                    href="https://lsa.umich.edu/mrads" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 rounded-md transition-colors border border-purple-500/30"
+                  >
+                    Access MRADS Portal →
+                  </a>
                 </div>
-                <div className="text-purple-200 font-mono">
-                  {'>'}{'>'} Role: AR Development Division
-                </div>
-                <a 
-                  href="https://claws.engin.umich.edu" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-purple-400 hover:text-purple-300 transition-colors inline-block mt-2 font-mono text-sm"
-                >
-                  {'>'}{'>'} Access Research Portal
-                </a>
               </div>
             </div>
           </motion.div>
