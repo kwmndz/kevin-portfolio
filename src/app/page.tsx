@@ -9,6 +9,7 @@ import { RocketShip } from './components/RocketShip';
 // import ProjectsSection from './components/ProjectsSection';
 // import { VoidAnomaly } from './components/VoidAnomaly';
 import { ContactSection } from './components/ContactSection';
+import { EducationSection } from './components/EducationSection';
 
 // Dynamically import heavy components with proper default exports
 const SpaceDebrisField = dynamic(() => 
@@ -166,7 +167,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* Lazy load the rest of the sections */}
+        <EducationSection />
         <ProjectsSection />
         <SkillsConstellation />
         <ExperienceSection />

@@ -21,7 +21,7 @@ export function VoidAnomaly({ onActivate, isActive }: VoidAnomalyProps) {
         // transition={{ delay: 2, duration: 1 }}
         onClick={handleClick}
         className="relative group cursor-pointer"
-        whileHover={{ scale: 1.1 }}
+        // whileHover={{ scale: 1.1 }}
       >
         {/* Main anomaly */}
         <motion.div
