@@ -34,7 +34,7 @@ const SocialLinks = () => (
 export function HeroSection() {
   const [text, setText] = useState('');
   const fullText = "HELLO, I'M KEVIN";
-  const fullSubText = "A Software Engineer charting the edge of what's possible, with code as my compass and curiosity as my guide.";
+  const fullSubText = "A student using his interests in computer science and astrophysics to explore and make an impact in a universe with boundless questions.";
 
   useEffect(() => {
     const initialDelay = 800; // Delay in milliseconds
