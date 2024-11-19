@@ -12,8 +12,41 @@ export function EducationSection() {
     offset: ["start end", "end start"]
   });
 
-  const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const y = useTransform(scrollYProgress, [0.1, 0.3], [100, 0]);
+  const opacity = useTransform(scrollYProgress, [0.0, 0.15], [0, 1]);
+  const y = useTransform(scrollYProgress, [0.0, 0.15], [100, 0]);
+
+  const containerVariants = {
+    hidden: { 
+      opacity: 0,
+      scale: 0.8
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.05,
+        staggerChildren: 0.1,
+        when: "beforeChildren"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 50,
+      rotateX: -50
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
     <section 
@@ -27,9 +60,9 @@ export function EducationSection() {
       >
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[1px] h-20 bg-gradient-to-b from-transparent to-purple-500" />
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 0.4, type: "spring" }}
           className="mb-4"
         >
           <Rocket className="w-12 h-12 text-purple-400 mx-auto" />
@@ -44,11 +77,17 @@ export function EducationSection() {
 
       {/* Main Mission Control Display */}
       <motion.div
-        style={{ opacity }}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
         className="w-full max-w-6xl mx-auto px-4"
       >
         {/* Mission Status Display */}
-        <div className="bg-purple-900/20 backdrop-blur-sm rounded-lg border border-purple-500/30 p-6 mb-8">
+        <motion.div
+          variants={itemVariants}
+          className="bg-purple-900/20 backdrop-blur-sm rounded-lg border border-purple-500/30 p-6 mb-8"
+        >
           <div className="flex items-center gap-3 mb-4">
             <div className="flex gap-2">
               <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
@@ -69,15 +108,13 @@ export function EducationSection() {
               <div className="text-2xl font-bold text-purple-300">2024 - Present</div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Mission Objectives Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Terminal */}
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            variants={itemVariants}
             className="space-y-6"
           >
             {/* Primary Mission */}
@@ -137,9 +174,7 @@ export function EducationSection() {
 
           {/* Right Terminal */}
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            variants={itemVariants}
             className="space-y-6"
           >
             {/* Research Division */}
@@ -207,9 +242,7 @@ export function EducationSection() {
 
         {/* Mission Control Footer */}
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          variants={itemVariants}
           className="mt-8 text-center font-mono text-sm text-purple-400"
         >
           -- END OF MISSION CONTROL DISPLAY --
