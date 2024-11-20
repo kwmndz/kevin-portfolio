@@ -71,7 +71,7 @@ export function EducationSection() {
           Mission Control Center
         </h2>
         <p className="text-purple-400 text-lg">
-          Educational Trajectory and Research Operations
+          Education, Research, Programs & Communication Channels
         </p>
       </motion.div>
 
@@ -163,10 +163,10 @@ export function EducationSection() {
               </div>
               <div className="space-y-3 font-mono">
                 <div className="text-purple-200">
-                  {'>'}{'>'} Primary: kevinmendez2706@gmail.com
+                  {'>'}{'>'} Primary: <a href="mailto:kevinmendez2706@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors underline">kevinmendez2706@gmail.com</a>
                 </div>
                 <div className="text-purple-200">
-                  {'>'}{'>'} Academic: kwmndz@umich.edu
+                  {'>'}{'>'} Academic: <a href="mailto:kwmndz@umich.edu" className="text-purple-400 hover:text-purple-300 transition-colors underline">kwmndz@umich.edu</a>
                 </div>
               </div>
             </div>
@@ -191,7 +191,9 @@ export function EducationSection() {
                   Enhancing Human-Robot Interaction through UGV Path Planning in Unreal Engine
                 </div>
                 <div className="text-purple-400 text-sm italic">
-                  *Further mission details available in Experience Section
+                  <a href="#experience" className="hover:text-purple-300 transition-colors">
+                    *Further mission details available in Experience Section
+                  </a>
                 </div>
               </div>
             </div>
@@ -204,7 +206,7 @@ export function EducationSection() {
               </div>
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-xl font-bold text-purple-300 mb-2">CLAWS Research Initiative</h4>
+                  <h4 className="text-xl font-bold text-purple-300 mb-2">CLAWS Organization</h4>
                   <div className="text-purple-400 text-sm mb-2">
                     Collaborative Lab For Advancing Work in Space
                   </div>
@@ -224,7 +226,7 @@ export function EducationSection() {
                 <div>
                   <h4 className="text-xl font-bold text-purple-300 mb-2">Michigan Research and Discovery Scholars</h4>
                   <div className="text-purple-400 text-sm mb-2">
-                    Elite Research Program (Top 150 of 8500 Students)
+                    150 out of 8500 Freshmen 
                   </div>
                   <a 
                     href="https://lsa.umich.edu/mrads" 

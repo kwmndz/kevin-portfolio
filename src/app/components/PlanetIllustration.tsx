@@ -14,7 +14,7 @@ const ScrollIndicator = ({ planetTextOpacity }: ScrollIndicatorProps) => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="text-center translate-y-[-50%] hidden md:block"
+      className="text-center translate-y-[-50%] hidden lg:block"
     >
       <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-8 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
         Explore My Universe
@@ -43,7 +43,7 @@ const ScrollIndicator = ({ planetTextOpacity }: ScrollIndicatorProps) => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="md:hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 z-20 text-center"
+      className="lg:hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-2/3 z-20 text-center"
     >
       <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
         Explore My Universe
@@ -82,10 +82,10 @@ export function PlanetIllustration({
 }: PlanetIllustrationProps) {
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.8, y: "40%" }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 2.2 }}
-      className="absolute bottom-0 left-[40%] xs:left-[42%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] flex items-center justify-center"
+      className="absolute bottom-0 left-[35%] xs:left-[38%] sm:left-1/2 -translate-x-1/2 w-[90vw] sm:w-[800px] h-[90vw] sm:h-[800px] rounded-full bg-gradient-to-b from-[#1a4487] to-[#051c2c] flex items-center justify-center"
       style={{
         scale: planetScale,
         y: planetY,
