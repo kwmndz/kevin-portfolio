@@ -125,7 +125,7 @@ export function EducationSection() {
               </div>
               <div className="space-y-3 font-mono">
                 <div className="text-purple-200">
-                  {'>'}{'>'} B.S. Computer Science and Interdisciplinary Physics
+                  {'>'}{'>'} B.S. Computer Science and Astrophysics minor
                 </div>
                 <div className="text-purple-200">
                   {'>'}{'>'} Location: Ann Arbor, MI
@@ -144,13 +144,13 @@ export function EducationSection() {
               </div>
               <div className="space-y-3 font-mono">
                 <div className="text-purple-200">
-                  {'>'}{'>'} EECS 280: Programming and Data Structures
+                  {'>'}{'>'} EECS 281: Data Structures and Algorithms
                 </div>
                 <div className="text-purple-200">
-                  {'>'}{'>'} EECS 203: Discrete Mathematics
+                  {'>'}{'>'} ASTRO 201: Introduction to Astronomy
                 </div>
                 <div className="text-purple-200">
-                  {'>'}{'>'} PHYSICS 160 & 161: Physics I & Lab
+                  {'>'}{'>'} MATH 214: Linear Algebra
                 </div>
               </div>
             </div>

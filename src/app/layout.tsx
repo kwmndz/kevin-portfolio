@@ -28,11 +28,11 @@ export default function RootLayout({
 
             {/* Navigation links */}
             <motion.div 
-              className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex gap-8 items-center`}
+              className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex gap-8 items-center absolute md:relative left-0 top-14 md:top-0 flex-col md:flex-row bg-black/80 md:bg-transparent w-48 md:w-auto p-4 md:p-0`}
               initial={{ opacity: 0.55, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              {['Home', 'Experience', 'Projects', 'About'].map((item) => (
+              {['Home', 'About'].map((item) => (
                 <a
                   key={item}
                   href={
