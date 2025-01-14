@@ -206,7 +206,7 @@ export default function RocketTrail() {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  });
 
   return (
     <canvas

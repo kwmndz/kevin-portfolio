@@ -45,7 +45,7 @@ export default function StarTrail() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  });
 
   // Cleanup old particles
   useEffect(() => {

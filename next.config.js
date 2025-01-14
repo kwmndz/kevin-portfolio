@@ -1,12 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ['your-image-domain.com'],
-    unoptimized: false,
-  },
-  experimental: {
-    optimizeCss: true,
-  },
-}
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'kevinmendez';
 
-module.exports = nextConfig 
+module.exports = {
+  assetPrefix: isProd ? `/${repoName}/` : '',
+  basePath: isProd ? `/${repoName}` : '',
+};

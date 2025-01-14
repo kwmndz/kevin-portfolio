@@ -24,8 +24,6 @@ export function ContactSection() {
   });
 
   const opacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0.7, 1], [0.8, 1]);
-  const y = useTransform(scrollYProgress, [0.7, 1], [100, 0]);
 
   // Initialization sequence
   useEffect(() => {
