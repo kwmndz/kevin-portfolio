@@ -8,7 +8,7 @@ import { PlanetIllustration } from './components/PlanetIllustration';
 import { RocketShip } from './components/RocketShip';
 // import ProjectsSection from './components/ProjectsSection';
 // import { VoidAnomaly } from './components/VoidAnomaly';
-import { ContactSection } from './components/ContactSection';
+// import { ContactSection } from './components/ContactSection';
 import { EducationSection } from './components/EducationSection';
 
 // Dynamically import heavy components with proper default exports
@@ -167,11 +167,11 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <EducationSection />
+        <ExperienceSection />
         <ProjectsSection />
         <SkillsConstellation />
-        <ExperienceSection />
-        <ContactSection />
+        <EducationSection />
+        {/* <ContactSection /> */}
       </div>
 
       {isRocketTrailActive && <RocketTrail />}
