@@ -4,4 +4,5 @@ const repoName = 'kevinmendez';
 module.exports = {
   assetPrefix: isProd ? `/${repoName}/` : '',
   basePath: isProd ? `/${repoName}` : '',
+  output: 'export',
 };
