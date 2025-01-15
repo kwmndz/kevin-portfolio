@@ -2,7 +2,6 @@
 
 import { motion, MotionValue } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import Image from 'next/image';
 
 interface ScrollIndicatorProps {
   planetTextOpacity: MotionValue<number>;

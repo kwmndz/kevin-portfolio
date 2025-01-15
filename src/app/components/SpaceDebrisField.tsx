@@ -32,13 +32,6 @@ export const DEBRIS_OBJECTS = [
   }
 ] as const;
 
-// Update debris image paths
-const debrisImages = [
-  '/kevinmendez/images/debris1.png',
-  '/kevinmendez/images/debris2.png',
-  // ...
-];
-
 export default function SpaceDebrisField() {
   const [debris, setDebris] = useState<DebrisObject[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
