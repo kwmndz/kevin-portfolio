@@ -190,3 +190,9 @@ export const workExperience: WorkExperience[] = [
     techStack: ["Python", "SQL", "WordPress", "UI Development"]
   }
 ]; 
+
+// If you have any hardcoded paths, update them like this:
+export const STATIC_PATHS = {
+  images: '/kevinmendez/images/',
+  assets: '/kevinmendez/assets/',
+} 
