@@ -8,7 +8,7 @@ export function Navigation() {
 
   const links = [
     { href: '/kevinmendez/', label: 'Home' },
-    { href: '/kevinmendez/about', label: 'About' },
+    { href: '/kevinmendez/abouttemp', label: 'About' },
     // Add other navigation links here
   ];
 
