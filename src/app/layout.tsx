@@ -36,9 +36,9 @@ export default function RootLayout({
                 <a
                   key={item}
                   href={
-                    item === 'Home' ? 'kevinmendez/' :
-                    item === 'About' ? `kevinmendez/abouttemp` : 
-                    `#${item.toLowerCase()}`
+                    item === 'Home' ? '/kevinmendez/' :
+                    item === 'About' ? '/kevinmendez/about' : 
+                    `/kevinmendez/${item.toLowerCase()}`
                   }
                   className="text-gray-300 hover:text-white transition-colors relative group"
                 >

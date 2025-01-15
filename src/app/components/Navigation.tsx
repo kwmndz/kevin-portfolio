@@ -7,8 +7,8 @@ export function Navigation() {
   const pathname = usePathname();
 
   const links = [
-    { href: 'kevinmendez/', label: 'Home' },
-    { href: 'kevinmendez/abouttemp', label: 'About' },
+    { href: '/kevinmendez/', label: 'Home' },
+    { href: '/kevinmendez/about', label: 'About' },
     // Add other navigation links here
   ];
 

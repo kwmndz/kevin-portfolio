@@ -9,31 +9,31 @@ export const projects = [
   {
     title: "Book Data Pipeline & Cataloger",
     description: "An iOS app to scan book barcodes or enter ISBNs, with a python backed to pull data like author info and pricing through web scraping. Outputs in a csv format, with optional combining and sorting of the files.",
-    image: "kevinmendez/bkDataPipeline.jpeg",
+    image: "/kevinmendez/bkDataPipeline.jpeg",
     link: "https://github.com/kwmndz/ISBN-Parser"
   },
   {
     title: "Augmented Reality Connect 4 & AI Bot",
     description: "An AR implementation of Connect 4 for iOS, with realistic physics and a bot opponent. Pieces can be placed via touch interaction and the bot utilizes min-maxing and alpha-beta pruning to never loose!",
-    image: "kevinmendez/c4AR.png", 
+    image: "/kevinmendez/c4AR.png", 
     link: "https://github.com/kwmndz/ConnectFourAR"
   },
   {
     title: "2D Physics Engine & Simulator",
     description: "A 2D physics engine and simulator developed from scratch in C++. It employs Verlet integration for physics calculations and utilizes the SFML library for rendering visuals. The engine is fully deterministic, and is still currently in its early stages of development.",
-    image: "kevinmendez/snowman_pfp_physics_sim.png",
+    image: "/kevinmendez/snowman_pfp_physics_sim.png",
     link: "https://github.com/kwmndz/2D-Physics-Simulator"
   },
   {
     title: "UGV Path Planning & Local Min Prediction",
     description: "This project is a customizable simulation initially developed in Python and later optimized with C++ for improved performance. It enables users to configure obstacles, waypoints, and size, with options for randomizing various aspects. The simulation utilizes the potential field algorithm for UGV navigation and Dynamic Bayesian Filtering to predict local minima. Results are saved in organized folders with concise logs and graphs for easy visualization. The implementation supports multi-threading to run multiple simulations simultaneously.",
-    image: "kevinmendez/potentialalg_pfp.png",
+    image: "/kevinmendez/potentialalg_pfp.png",
     link: "https://github.com/kwmndz/MAVRIC-Lab"
   },
   {
     title: "Chess Position Detector & Analyzer",
     description: "A Python tool that detects chess piece positions from a board image, converts it to FEN notation, and suggests the next move based on the setup.",
-    image: "kevinmendez/chess_pfp.png", 
+    image: "/kevinmendez/chess_pfp.png", 
     link: "https://github.com/kwmndz/ChessBoardDetection"
   }
 ];
