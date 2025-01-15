@@ -1,8 +1,8 @@
 {
-  "homepage" : "https://kwmndz.github.io/",
+  "homepage" : "https://kwmndz.github.io/kevinmendez",
   "name": "kevinmendez",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "scripts": {
     "build": "next build",
     "deploy": "next build && touch out/.nojekyll && gh-pages -d out"
