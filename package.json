@@ -1,7 +1,8 @@
 {
+  "homepage" : "https://kwmndz.github.io/kevinmendez/",
   "name": "portfolio_space",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "next build",
     "deploy": "next build && touch out/.nojekyll && gh-pages -d out"
